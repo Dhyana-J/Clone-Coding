@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Github</title>
+
+    <meta name="author" content="Kalii">
+    <meta name="description" content="GitHub is...">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scaleable=no, maximum-scale=1, minimum-sclale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--IE Rendering 관련 코드-->
+
+
+    <!--og? Open Graph의 약어. 여기에 외부에 제공할 정보를 정의할 수 있다.
+        og는 페북에서 많이 활용하는 개념
+    
+        twitter? twitter card 줄임말. og와 마찬가지로 동작하는데, 트위터에서 많이 활용하는 개념
+        og와 twitter 둘 다 정의해주는게 좋다. 다양한 기업에서 둘 다 쓰인다.
+    -->
+    <!-- http://ogp.me/ -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GitHub">
+    <meta property="og:title" content="Build software better, together">
+    <meta property="og:description" content="GitHub clone coding / GitHub is where people build software. More than 31 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
+    <meta property="og:image" content="img/logo__github.png">
+    <meta property="og:url" content="https://github.com">
+
+    <!-- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:site" content="GitHub">
+    <meta property="twitter:title" content="Build software better, together">
+    <meta property="twitter:description" content="GitHub clone coding / GitHub is where people build software. More than 31 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
+    <meta property="twitter:image" content="img/logo__github.png">
+    <meta property="twitter:url" content="https://github.com">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"><!--IE를 위한 favicon 적용 IE는 ico파일 쓰는게 좋음-->
+    <link rel="icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg==" crossorigin="anonymous" />
+    <!--순서주의! 항상 리셋 하고 다른 디자인 적용해야함-->
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <!--
+        BEM(Block Element Modifier)
+        CSS 작명 규칙(반드시 따라야하는 것은 아님 일반적으로 이렇게 쓴다.)
+        
+        __ : ~의 일부분 (언더바 두 개)
+        -- : ~의 상태 (대시 두개)
+        - : 일반적인 작명
+    -->
+    
+    <div class="body__container">
+
+        <!-- HEADER -->
+        <header class="section">
+            <div class="inner clearfix"><!--컨텐츠들 중앙에 모아주는 inner-->
+
+                <div class="menu-group float--left">
+                    <div class="logo"><a href="#">GitHub</a></div>
+                    <ul class="main-menu">
+                        <li><a href="#">Personal</a></li>
+                        <li><a href="#">Open Source</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Explore</a></li>
+                    </ul>
+                </div>
+
+                <div class="sign-group">
+                    <div class="btn-group">
+                        <a href="#" class="btn sign-in">Sign in</a>
+                        <a href="#" class="btn btn--primary sign-up">Sign up</a>
+                    </div>
+
+                    <!--
+                        form은 서버로 전달할 데이터를 정리하는 것이므로, 
+                        또 사용자에게 전달할 데이터를 입력받는 것이므로
+                        고유해야한다! 그래서 id값을 추가해준다.
+                    -->
+                    <form id="search-form" method="POST" action="">
+                        <input type="text" id="search" class="input--text" placeholder="Search Github">
+                        <input type="submit" value="Submit">
+                    </form>
+                    <ul class="sub-menu">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- VISUAL -->
+        <section class="section section--visual">
+            <div class="inner">
+                <div class="summary">
+                    <div class="summary__title">
+                        <!--띄어쓰기 대신 &nbsp;를 사용하면 semantic적으로 
+                            띄어쓰기를 하고도 디자인적으로는 두 단어를 연결할 수 있다.
+                            그래서 미관상 자연스러운 줄바꿈을 유도할 수 있다 :)
+                            이는 <br>이라는 태그를 써서 아예 줄 바꿈을 고정시켜버리는것과는 천지차이다.
+                            특히나 반응형 페이지를 만들 때 중요하다!
+                        -->
+                        How people build&nbsp;software
+                    </div>
+                    <div class="summary__description">
+                        Millions of developers use GitHub to build personal projects, support their businesses, and&nbsp;work together on open source technologies.
+                    </div>
+                </div>
+                <form id="sign-form" action="" method="POST">
+                    <ul>
+                        <li><input type="text" class="input--text" placeholder="Pick a username"></li>
+                        <li><input type="email" class="input--text" placeholder="Your email address"></li>
+                        <li>
+                            <input type="password" class="input--text" placeholder="Create a password">
+                            <p class="caption">Use at least one letter, one numeral, and seven characters.</p>
+                        </li>
+                        <li>
+                            <button type="submit" class="btn btn--primary">Sign up for GitHub</button>
+                            <p class="caption">By clicking "Sign up for GitHub", you agree to our terms of service and privacy policy. We'll occasionally send you account related emails.</p>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+    
+    </div>
+
+</body>
+
+</html>
