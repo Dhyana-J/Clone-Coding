@@ -1,1 +1,2 @@
-# clone coding practices
+# nomad coder clone coding practices
+
