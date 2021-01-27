@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg==" crossorigin="anonymous" />
     <!--순서주의! 항상 리셋 하고 다른 디자인 적용해야함-->
     <link rel="stylesheet" href="css/main.css">
-
+    <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
 
                 <div class="menu-group float--left">
                     <div class="logo"><a href="#">GitHub</a></div>
-                    <ul class="main-menu">
+                    <ul class="main-menu toggle">
                         <li><a href="#">Personal</a></li>
                         <li><a href="#">Open Source</a></li>
                         <li><a href="#">Business</a></li>
@@ -70,7 +70,7 @@
                     </ul>
                 </div>
 
-                <div class="sign-group">
+                <div class="sign-group float--right toggle">
                     <div class="btn-group">
                         <a href="#" class="btn sign-in">Sign in</a>
                         <a href="#" class="btn btn--primary sign-up">Sign up</a>
@@ -91,6 +91,8 @@
                         <li><a href="#">Support</a></li>
                     </ul>
                 </div>
+
+                <div id="toggle-btn">Header Menu Toggle Button</div>
 
             </div>
         </header>
